@@ -3,12 +3,7 @@ package P4;
 public class FarmTest {
 
 	public static void main(String[] args) throws Exception {
-		/* 
-		  Previous save file needs to be deleted, because in P4 version of Farm 
-		    we don't use a variable for animal count. Also, the data structure 
-		    has been changed to a custom Linked List. Altogether, it makes data from 
-		    the old save incompatible with the new version and will cause an error.
-		*/
+		
 		Farm myFarm = new Farm("C:/ForJava/P4/farmsave.dat");
 		myFarm.getAnimals().addFirst(new Cow());
 		myFarm.getAnimals().addLast(new Cow());
@@ -25,10 +20,10 @@ public class FarmTest {
 		myFarm.printAnimals();
 		System.out.println("Adding a clone of the second animal\n----------------");
 		
-		myFarm.addClone(myFarm.getAnimals().get(0)); //change
+		myFarm.addClone(myFarm.getAnimals().get(0));
 		
 		myFarm.printAnimals(); 
-	    System.out.println("List of starving animals:\n------------");
+		System.out.println("List of starving animals:\n------------");
 		System.out.println(myFarm.getAnimals().getStarvingAnimals());
 		System.out.println("List of hungry animals:\n------------");
 		System.out.println(myFarm.getAnimals().getHungryAnimals());
